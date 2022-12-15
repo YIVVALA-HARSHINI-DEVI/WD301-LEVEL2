@@ -1,7 +1,8 @@
 const http = require("http");
 const fs = require("fs");
+const args = require("minimist")(process.argv.slice(1));
 
-let registerData =           "";
+let registerData = "";
 let homeData = "";
 let projectData = "";
 
@@ -45,4 +46,4 @@ http
         break;
     }
   })
-  .listen(5000);
+  .listen(args["port"]);
